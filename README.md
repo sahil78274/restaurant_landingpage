@@ -1,40 +1,52 @@
-# FORME — Premium Fitness Club
+# FORME — Performance Fitness Club
 
-A single-page, editorial landing page for a luxury fitness club. Built with plain HTML, CSS and
-GSAP (ScrollTrigger) — no build step, no framework.
+A single-page, campaign-style landing page for a performance fitness brand.
+Plain HTML, CSS and GSAP (ScrollTrigger) — no framework, no build step.
 
 ## Run locally
 
 ```bash
 python3 -m http.server 8000
-# then open http://localhost:8000
+# open http://localhost:8000
 ```
 
-## Structure
+## Design system
 
-```
-index.html               – the landing page
-assets/css/styles.css    – design tokens, layout, responsive rules
-assets/js/main.js        – loader, hero intro, reveals, parallax, menu
-assets/js/*.min.js       – GSAP + ScrollTrigger (vendored)
-assets/fonts/            – Cormorant Garamond + Jost (self-hosted woff2)
-assets/img/              – photography
-assets/favicon.svg
-```
+| Token | Value | Use |
+| --- | --- | --- |
+| `--white` | `#FFFFFF` | page background |
+| `--ink` | `#0B0B0B` | type, rules, inverted sections |
+| `--beige` / `--beige-soft` | `#D8D0C3` / `#EFEAE1` | minimal accent, featured plan |
+| `--line` | `rgba(11,11,11,.16)` | hairline separators |
 
-## Editing content
+- **Display / UI:** Archivo 700–900, tight negative tracking, uppercase.
+- **Data / labels:** JetBrains Mono 400–500, uppercase, wide tracking.
+- Both self-hosted as `woff2` in `assets/fonts/`.
 
-- **Membership prices** — in `index.html`, change the `data-price` value *and* the visible
-  number inside each `.plan__amount` span.
-- **Copy** — all section copy is plain text in `index.html`.
-- **Contact details** — placeholders live in the footer and the mobile menu; update them
-  before going live.
-- **Colours / type / spacing** — the `:root` block at the top of `styles.css`.
-- **Motion** — timings live in `main.js`; all animation is disabled automatically for
+## Page structure
+
+1. `hero` — oversized "NO EXCUSES. / JUST PROGRESS." with the athlete photograph set *inside* the headline, stepping over it and under the second line. Vertical margin labels, rotating scroll disc.
+2. `data` — hairline-separated counters (12,000+ / 24/7 / 100%).
+3. `programs` — three full-width editorial rows with oversized numbering; on desktop the photograph is revealed from the right edge on hover and drifts with the pointer.
+4. `campaign` — full-bleed monochrome campaign image, parallax, "BUILT THROUGH REPETITION."
+5. `marquee` — oversized type strip with outlined words.
+6. `philosophy` — asymmetric image/type grid, sticky image column on desktop, "PROGRESS IS EARNED. NOT GIVEN."
+7. `membership` — typographic table (Starter / Performance / Elite), hairline separators, ink fill on hover.
+8. `final` — "YOUR NEXT REP STARTS HERE." plus the Join FORME action.
+9. `footer` — ink block with an outlined FORME wordmark.
+
+## Editing
+
+- **Prices** — change `data-price` *and* the visible number inside each `.plan__amount`.
+- **Copy** — all plain text in `index.html`.
+- **Contact details** — placeholders in the footer and mobile menu.
+- **Colours / type / spacing** — the `:root` block at the top of `assets/css/styles.css`.
+- **Motion timings** — `assets/js/main.js`; everything is bypassed under
   `prefers-reduced-motion: reduce`.
 
 ## Notes
 
-- Photography is AI-generated placeholder imagery, licensed for this demo.
-- The "Start your journey" button opens a `mailto:` draft. No form data is sent or stored.
+- Photography is AI-generated black-and-white placeholder imagery.
+- "Join FORME" and the plan links open a pre-filled `mailto:` draft — no form data is
+  sent to a backend or stored.
 - No pinned sections, no scroll hijacking, no custom smooth-scroll library.

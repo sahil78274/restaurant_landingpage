@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FORME — Premium Fitness Club, Mayfair</title>
-  <meta name="description" content="FORME is a premium fitness club in Mayfair. Editorial spaces, expert coaching and considered strength training. Build your strongest self.">
-  <meta name="theme-color" content="#F8F7F3">
-  <meta property="og:title" content="FORME — Premium Fitness Club">
-  <meta property="og:description" content="Build your strongest self. A premium fitness club in Mayfair, London.">
+  <title>FORME — Performance Fitness Club, London</title>
+  <meta name="description" content="FORME is a performance fitness club. Strength, conditioning and personal training built on repetition. No excuses. Just progress.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="FORME — Performance Fitness Club">
+  <meta property="og:description" content="No excuses. Just progress. Strength, conditioning and personal training in London.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">
+  <link rel="preload" href="assets/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/img/hero-athlete.jpg" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -21,35 +21,34 @@
 
   <div class="progress" aria-hidden="true"><span class="progress__bar" id="progressBar"></span></div>
 
-  <!-- Page-load animation -->
+  <!-- ============ LOADER ============ -->
   <div class="loader" id="loader" aria-hidden="true">
     <div class="loader__inner">
       <span class="loader__word">FORME</span>
-      <span class="loader__line"><i></i></span>
-      <span class="loader__label">Premium Fitness Club — Mayfair</span>
+      <div class="loader__meter">
+        <span class="loader__track"><i></i></span>
+        <span class="loader__count" id="loaderCount">00</span>
+      </div>
+      <span class="loader__note">Performance fitness club — London</span>
     </div>
   </div>
 
-  <!-- ================= NAV ================= -->
+  <!-- ============ NAV ============ -->
   <header class="nav" id="siteHeader">
     <div class="nav__inner">
-      <a class="nav__logo" href="#home" aria-label="FORME — home">
-        <span>FORME</span>
-        <em>London</em>
-      </a>
+      <a class="nav__logo" href="#top" aria-label="FORME — home">FORME<span class="nav__mark" aria-hidden="true"></span></a>
 
       <nav class="nav__links" aria-label="Primary">
-        <a class="nav__link is-active" href="#home" data-nav>Home</a>
-        <a class="nav__link" href="#about" data-nav>About</a>
-        <a class="nav__link" href="#programs" data-nav>Programs</a>
-        <a class="nav__link" href="#membership" data-nav>Membership</a>
+        <a class="nav__link" href="#programs" data-nav><span class="nav__num">01</span>Training</a>
+        <a class="nav__link" href="#philosophy" data-nav><span class="nav__num">02</span>Philosophy</a>
+        <a class="nav__link" href="#membership" data-nav><span class="nav__num">03</span>Membership</a>
       </nav>
 
       <div class="nav__actions">
-        <a class="btn btn--nav" href="#membership">Join now</a>
+        <span class="nav__status"><i aria-hidden="true"></i>Open 24/7</span>
+        <a class="btn btn--solid nav__cta" href="#membership">Join FORME</a>
         <button class="nav__toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-          <span class="nav__toggle-line"></span>
-          <span class="nav__toggle-line"></span>
+          <span></span><span></span>
         </button>
       </div>
     </div>
@@ -66,376 +65,345 @@
         </button>
       </div>
       <nav class="menu__nav" aria-label="Mobile">
-        <a href="#home" class="menu__link"><span class="menu__index">01</span><span class="menu__text">Home</span></a>
-        <a href="#about" class="menu__link"><span class="menu__index">02</span><span class="menu__text">About</span></a>
-        <a href="#programs" class="menu__link"><span class="menu__index">03</span><span class="menu__text">Programs</span></a>
-        <a href="#membership" class="menu__link"><span class="menu__index">04</span><span class="menu__text">Membership</span></a>
+        <a href="#programs" class="menu__link"><span class="menu__num">01</span><span>Training</span></a>
+        <a href="#philosophy" class="menu__link"><span class="menu__num">02</span><span>Philosophy</span></a>
+        <a href="#membership" class="menu__link"><span class="menu__num">03</span><span>Membership</span></a>
       </nav>
       <div class="menu__foot">
-        <p>12 Bruton Place, Mayfair<br>London W1J 6NE</p>
-        <a class="menu__cta" href="#membership">Join the club <span aria-hidden="true">↗</span></a>
+        <p class="mono">EST. 2016 — LONDON<br>OPEN 24/7</p>
+        <a class="menu__cta" href="#membership">Join FORME <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </div>
 
   <main id="main">
 
-    <!-- ================= HERO ================= -->
-    <section class="hero" id="home" aria-labelledby="heroTitle">
-      <span class="hero__vertical" aria-hidden="true">Mayfair · London — Est. 2014</span>
+    <!-- ==================================================================
+         HERO
+         ================================================================== -->
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <span class="hero__vlabel hero__vlabel--left" aria-hidden="true">Performance fitness club — London</span>
+      <span class="hero__vlabel hero__vlabel--right" aria-hidden="true">Vol. 02 / 2016—2026</span>
 
-      <div class="hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow hero__eyebrow" data-hero-el><span class="eyebrow__rule" aria-hidden="true"></span>Premium fitness experience</p>
+      <div class="hero__inner">
+        <div class="hero__meta">
+          <span class="tag">Premium performance club</span>
+          <span class="hero__coord mono">51.5072° N / 0.1276° W</span>
+        </div>
 
+        <div class="hero__stack">
           <h1 class="hero__title" id="heroTitle">
-            <span class="line"><span class="line__inner">Build your</span></span>
-            <span class="line line--em"><span class="line__inner">strongest</span></span>
-            <span class="line"><span class="line__inner">self.</span></span>
+            <span class="hero__line hero__line--1" data-hero-line><span class="hero__line-inner">No excuses.</span></span>
+            <span class="hero__media" data-hero-media>
+              <img src="assets/img/hero-athlete.jpg" width="768" height="1376" alt="Athlete mid kettlebell swing in a concrete training hall">
+              <span class="hero__fig mono">Fig. 01 — Kettlebell swing</span>
+            </span>
+            <span class="hero__line hero__line--2" data-hero-line><span class="hero__line-inner">Just progress.</span></span>
           </h1>
+        </div>
 
-          <p class="hero__text" data-hero-el>
-            Where discipline meets design. Discover a better approach to strength, fitness and everyday wellness.
+        <div class="hero__foot">
+          <p class="hero__desc">
+            A performance club built on repetitions, not promises. Strength, conditioning and
+            personal training for people who intend to keep showing up.
           </p>
 
-          <div class="hero__actions" data-hero-el>
+          <div class="hero__actions">
             <a class="btn btn--solid" href="#programs">
-              <span>Explore more</span>
+              <span>Start training</span>
               <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn--ghost" href="#membership"><span>Join the club</span></a>
+            <a class="btn btn--line" href="#membership"><span>Membership</span></a>
           </div>
 
-          <div class="hero__scroll" data-hero-el>
-            <span class="hero__scroll-line" aria-hidden="true"><i></i></span>
-            <span class="hero__scroll-label">Scroll to explore</span>
-          </div>
-        </div>
-
-        <div class="hero__media">
-          <figure class="hero__figure">
-            <div class="frame" aria-hidden="true"></div>
-            <div class="media hero__image" data-reveal-img>
-              <img src="assets/img/hero.jpg" width="768" height="1376" alt="An athlete performing a controlled kettlebell deadlift in a light-filled, minimalist studio" fetchpriority="high">
-            </div>
-
-            <figcaption class="hero__caption">
-              <span class="hero__caption-index">01</span>
-              <span>The studio — 06:40, before the club wakes.</span>
-            </figcaption>
-
-            <span class="hero__float" data-float aria-hidden="true">
-              <span>Strength</span><i></i><span>Discipline</span><i></i><span>Progress</span>
-            </span>
-          </figure>
+          <a class="scroll-dot" href="#data" aria-label="Scroll to club statistics">
+            <svg class="scroll-dot__ring" viewBox="0 0 100 100" aria-hidden="true">
+              <defs><path id="dotPath" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
+              <text><textPath href="#dotPath">Scroll — Explore FORME — Scroll — Explore FORME —</textPath></text>
+            </svg>
+            <svg class="scroll-dot__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ================= ABOUT ================= -->
-    <section class="section about" id="about" aria-labelledby="aboutTitle">
-      <div class="container">
-        <div class="about__head">
-          <p class="eyebrow"><span class="eyebrow__num">01</span><span>About FORME</span></p>
-          <h2 class="display" id="aboutTitle">
-            <span class="display__line" data-reveal>More than</span>
-            <span class="display__line display__line--em" data-reveal>a workout.</span>
-          </h2>
-        </div>
-
-        <div class="about__grid">
-          <div class="about__media">
-            <figure class="about__figure">
-              <div class="media media--portrait" data-reveal-img>
-                <img src="assets/img/philosophy-1.jpg" width="768" height="1376" alt="A member resting on an oak bench in a quiet, sunlit studio" loading="lazy" data-parallax="7">
-              </div>
-              <figcaption class="caption"><span>The quiet hours</span><span>Studio 01, 08:15</span></figcaption>
-            </figure>
-
-            <figure class="about__inset" data-parallax="-5">
-              <div class="media media--landscape" data-reveal-img>
-                <img src="assets/img/philosophy-2.jpg" width="1408" height="768" alt="Chalked hands gripping a bronze-toned barbell" loading="lazy">
-              </div>
-            </figure>
-          </div>
-
-          <div class="about__body">
-            <p class="lede" data-reveal>Real transformation begins with consistency. We create an environment where discipline becomes a habit and progress becomes a lifestyle.</p>
-            <p class="body-text" data-reveal>FORME was founded on a simple belief: the body responds to attention, not intensity. Our studio is quiet by design — warm plaster, pale oak, and light that moves across the floor through the morning. No mirrors shouting. No music competing. Just space, and the company of people who take their time seriously.</p>
-            <p class="body-text" data-reveal>Strength here is not a season. It is the architecture of a life lived deliberately — trained, recovered and repeated.</p>
-
-            <dl class="stats">
-              <div class="stat" data-reveal>
-                <dt>Founded</dt>
-                <dd>2014</dd>
-              </div>
-              <div class="stat" data-reveal>
-                <dt>Coaches</dt>
-                <dd>12</dd>
-              </div>
-              <div class="stat" data-reveal>
-                <dt>Members</dt>
-                <dd>350</dd>
-              </div>
-            </dl>
-
-            <a class="link-arrow" href="#programs" data-reveal>
-              <span>See how we train</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
+    <!-- ==================================================================
+         DATA STRIP
+         ================================================================== -->
+    <section class="data" id="data" aria-label="Club statistics">
+      <ul class="data__list" role="list">
+        <li class="data__item" data-reveal>
+          <span class="data__value"><span data-count="12000" data-format="comma">12,000</span><span class="data__plus">+</span></span>
+          <span class="data__label">Workouts completed</span>
+        </li>
+        <li class="data__item" data-reveal>
+          <span class="data__value">24/7</span>
+          <span class="data__label">Training access</span>
+        </li>
+        <li class="data__item" data-reveal>
+          <span class="data__value"><span data-count="100">100</span><span class="data__plus">%</span></span>
+          <span class="data__label">Commitment</span>
+        </li>
+      </ul>
     </section>
 
-    <!-- ================= PROGRAMS ================= -->
-    <section class="section programs" id="programs" aria-labelledby="programsTitle">
-      <div class="container">
-        <div class="programs__head">
-          <div>
-            <p class="eyebrow"><span class="eyebrow__num">02</span><span>Programs</span></p>
-            <h2 class="display" id="programsTitle">
-              <span class="display__line" data-reveal>Find your</span>
-              <span class="display__line display__line--em" data-reveal>strength.</span>
-            </h2>
-          </div>
-          <p class="programs__intro" data-reveal>Three disciplines, one considered approach. Every programme begins with a movement assessment and is built around your body, your schedule and the life you want to lead.</p>
+    <!-- ==================================================================
+         PROGRAMS
+         ================================================================== -->
+    <section class="programs" id="programs" aria-labelledby="programsTitle">
+      <div class="shell">
+        <div class="section-head">
+          <p class="label" data-reveal><span class="label__num">01</span>Training programmes</p>
+          <h2 class="h-display" id="programsTitle" data-reveal>Find your<br>discipline.</h2>
+          <p class="section-head__aside mono" data-reveal>Three programmes.<br>One standard.</p>
         </div>
 
-        <div class="program-list">
+        <div class="rows">
+
           <!-- 01 -->
-          <article class="program">
-            <div class="program__media">
-              <div class="media media--portrait" data-reveal-img>
-                <img src="assets/img/program-personal.jpg" width="768" height="1376" alt="A coach attentively guiding a member through a dumbbell movement" loading="lazy" data-parallax="6">
-              </div>
-              <span class="program__tag">01</span>
-            </div>
-            <div class="program__body">
-              <h3 class="program__title" data-reveal>Personal<br>Training</h3>
-              <p class="program__text" data-reveal>One coach. One body. A programme written for the way you move, recover and live — reviewed every six weeks and adjusted to the season you are in.</p>
-              <ul class="program__meta" role="list" data-reveal>
-                <li>60 minutes</li>
-                <li>One to one</li>
-                <li>Assessment included</li>
-              </ul>
-              <a class="link-arrow" href="#membership" data-reveal>
-                <span>Explore programme</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </article>
+          <a class="row" href="#membership" data-row>
+            <span class="row__num" aria-hidden="true">01</span>
+            <span class="row__title"><span class="row__title-inner">Strength</span></span>
+            <span class="row__desc">Progressive barbell and dumbbell loading, coached in small groups. Build capacity that holds up under real weight.</span>
+            <span class="row__meta mono">45—75 min · Max 6</span>
+            <span class="row__cta" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </span>
+            <span class="row__media" aria-hidden="true">
+              <img src="assets/img/strength.jpg" width="1408" height="768" alt="" loading="lazy">
+            </span>
+          </a>
 
           <!-- 02 -->
-          <article class="program program--reverse">
-            <div class="program__media">
-              <div class="media media--landscape" data-reveal-img>
-                <img src="assets/img/program-strength.jpg" width="1376" height="768" alt="A member setting up under a barbell on a lifting platform" loading="lazy">
-              </div>
-              <span class="program__tag">02</span>
-            </div>
-            <div class="program__body">
-              <h3 class="program__title" data-reveal>Strength<br>Training</h3>
-              <p class="program__text" data-reveal>Meticulous, progressive loading in a studio designed for it. Build capacity that stays with you long after the session ends.</p>
-              <ul class="program__meta" role="list" data-reveal>
-                <li>45 — 75 minutes</li>
-                <li>Max. four members</li>
-                <li>Progressive plan</li>
-              </ul>
-              <a class="link-arrow" href="#membership" data-reveal>
-                <span>Explore programme</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </article>
+          <a class="row" href="#membership" data-row>
+            <span class="row__num" aria-hidden="true">02</span>
+            <span class="row__title"><span class="row__title-inner">Conditioning</span></span>
+            <span class="row__desc">Engine work with intent — intervals, sled, erg and carries. Structured suffering, measured every four weeks.</span>
+            <span class="row__meta mono">30—50 min · Max 8</span>
+            <span class="row__cta" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </span>
+            <span class="row__media" aria-hidden="true">
+              <img src="assets/img/conditioning.jpg" width="1408" height="768" alt="" loading="lazy">
+            </span>
+          </a>
 
           <!-- 03 -->
-          <article class="program program--wide">
-            <div class="program__media">
-              <div class="media media--wide" data-reveal-img>
-                <img src="assets/img/program-functional.jpg" width="768" height="1376" alt="An athlete mid-air above a wooden plyometric box" loading="lazy">
-              </div>
-              <span class="program__tag">03</span>
-            </div>
-            <div class="program__body">
-              <h3 class="program__title" data-reveal>Functional<br>Fitness</h3>
-              <p class="program__text" data-reveal>Movement that translates — carry, climb, sprint, return to the ground. Athleticism without theatrics, built for the life you actually live.</p>
-              <ul class="program__meta" role="list" data-reveal>
-                <li>50 minutes</li>
-                <li>Small group</li>
-                <li>Outdoor sessions</li>
-              </ul>
-              <a class="link-arrow" href="#membership" data-reveal>
-                <span>Explore programme</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </article>
+          <a class="row" href="#membership" data-row>
+            <span class="row__num" aria-hidden="true">03</span>
+            <span class="row__title"><span class="row__title-inner">Personal<br>training</span></span>
+            <span class="row__desc">One coach, one programme, no audience. Written around your training age, schedule and the limiter we find in week one.</span>
+            <span class="row__meta mono">60 min · 1:1</span>
+            <span class="row__cta" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </span>
+            <span class="row__media" aria-hidden="true">
+              <img src="assets/img/coaching.jpg" width="1408" height="768" alt="" loading="lazy">
+            </span>
+          </a>
+
         </div>
       </div>
     </section>
 
-    <!-- ================= VISUAL BREAK ================= -->
-    <section class="break" aria-labelledby="breakTitle">
-      <div class="break__media">
-        <img src="assets/img/club-interior.jpg" width="1376" height="768" alt="The main training floor: oak beams, arched windows and bronze-toned equipment" loading="lazy" data-parallax-free="18">
+    <!-- ==================================================================
+         CAMPAIGN
+         ================================================================== -->
+    <section class="campaign" aria-labelledby="campaignTitle">
+      <div class="campaign__media">
+        <img src="assets/img/campaign.jpg" width="1408" height="768" alt="A lone athlete under a barbell in a vast, light-filled concrete hall" loading="lazy" data-parallax-free="14">
       </div>
-      <div class="break__veil" aria-hidden="true"></div>
-      <div class="container break__content">
-        <p class="break__label" data-reveal>03 — The club</p>
-        <h2 class="break__title" id="breakTitle">
-          <span class="line-mask"><span data-reveal-line>Your only competition</span></span>
-          <span class="line-mask"><span data-reveal-line>is who you were</span></span>
-          <span class="line-mask"><span data-reveal-line class="break__em">yesterday.</span></span>
+      <div class="campaign__scrim" aria-hidden="true"></div>
+
+      <div class="shell campaign__inner">
+        <p class="campaign__label mono" data-reveal>02 — Campaign</p>
+        <h2 class="campaign__title" id="campaignTitle">
+          <span class="campaign__line"><span data-reveal-line>Built through</span></span>
+          <span class="campaign__line"><span data-reveal-line>repetition.</span></span>
         </h2>
+        <div class="campaign__foot">
+          <p class="campaign__text">Every result in this room arrived the same way: another session, unglamorous and repeated. We simply made the room worth returning to.</p>
+          <p class="campaign__stat mono"><span>04</span>Sessions / week<br>recommended minimum</p>
+        </div>
       </div>
     </section>
 
-    <!-- ================= MEMBERSHIP ================= -->
-    <section class="section membership" id="membership" aria-labelledby="membershipTitle">
-      <div class="container">
-        <div class="membership__head">
-          <div>
-            <p class="eyebrow"><span class="eyebrow__num">04</span><span>Membership</span></p>
-            <h2 class="display" id="membershipTitle">
-              <span class="display__line" data-reveal>Your journey</span>
-              <span class="display__line display__line--em" data-reveal>starts here.</span>
-            </h2>
-          </div>
-          <p class="membership__intro" data-reveal>Three ways to belong. Membership is limited to 350 people so that the quiet hours stay quiet. Prices below are editable placeholders.</p>
+    <!-- ==================================================================
+         MARQUEE
+         ================================================================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marqueeTrack">
+        <span class="marquee__group">
+          <span class="marquee__word">No excuses</span><i class="marquee__dot"></i>
+          <span class="marquee__word marquee__word--outline">Just progress</span><i class="marquee__dot"></i>
+          <span class="marquee__word">Built through repetition</span><i class="marquee__dot"></i>
+          <span class="marquee__word marquee__word--outline">Show up</span><i class="marquee__dot"></i>
+        </span>
+      </div>
+    </div>
+
+    <!-- ==================================================================
+         PHILOSOPHY
+         ================================================================== -->
+    <section class="philosophy" id="philosophy" aria-labelledby="philosophyTitle">
+      <div class="shell philosophy__grid">
+        <div class="philosophy__media">
+          <figure data-reveal-img>
+            <img src="assets/img/portrait.jpg" width="1376" height="768" alt="An athlete resting on a bench between sets, head bowed, chalk on his hands" loading="lazy" data-parallax="8">
+          </figure>
+          <span class="philosophy__block" aria-hidden="true"></span>
+          <p class="philosophy__caption mono">Fig. 02 — Between sets, 06:12</p>
         </div>
 
-        <!-- Editable placeholder prices: update data-price values below. -->
+        <div class="philosophy__body">
+          <p class="label" data-reveal><span class="label__num">03</span>Philosophy</p>
+          <h2 class="h-display philosophy__title" id="philosophyTitle" data-reveal>
+            Progress is<br>earned.<br><span class="philosophy__em">Not given.</span>
+          </h2>
+          <p class="philosophy__lede" data-reveal>
+            We do not sell transformation. We build the conditions for it — good coaching, honest
+            programming, and a room that expects you back tomorrow.
+          </p>
+
+          <ol class="principles" role="list">
+            <li class="principle" data-reveal>
+              <span class="principle__num mono">001</span>
+              <span class="principle__text"><strong>Consistency over intensity.</strong> The body responds to repetition, not heroics.</span>
+            </li>
+            <li class="principle" data-reveal>
+              <span class="principle__num mono">002</span>
+              <span class="principle__text"><strong>Measured, not guessed.</strong> Every programme is tested and rewritten every four weeks.</span>
+            </li>
+            <li class="principle" data-reveal>
+              <span class="principle__num mono">003</span>
+              <span class="principle__text"><strong>Recovery is training.</strong> Sleep, mobility and contrast therapy are scheduled work.</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         MEMBERSHIP
+         ================================================================== -->
+    <section class="membership" id="membership" aria-labelledby="membershipTitle">
+      <div class="shell">
+        <div class="section-head">
+          <p class="label" data-reveal><span class="label__num">04</span>Membership</p>
+          <h2 class="h-display" id="membershipTitle" data-reveal>Choose your<br>commitment.</h2>
+          <p class="section-head__aside mono" data-reveal>No contracts.<br>Cancel monthly.</p>
+        </div>
+
+        <!-- Editable placeholder prices: update data-price and the visible number. -->
         <div class="plans">
-          <article class="plan" data-reveal>
-            <div class="plan__top">
-              <h3 class="plan__name">Essential</h3>
-              <p class="plan__tagline">For the self-directed.</p>
-            </div>
-            <p class="plan__price">
-              <span class="plan__currency">£</span><span class="plan__amount" data-price="95">95</span>
-              <span class="plan__period">/ month</span>
-            </p>
-            <ul class="plan__list" role="list">
-              <li>Gym access</li>
-              <li>Basic equipment access</li>
-              <li>Locker facilities</li>
-            </ul>
-            <a class="btn btn--outline plan__cta" href="#cta">
-              <span>Join now</span>
-              <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-            </a>
-          </article>
+          <div class="plans__head mono" aria-hidden="true">
+            <span>Programme</span>
+            <span>Includes</span>
+            <span>Price / month</span>
+            <span></span>
+          </div>
 
-          <article class="plan plan--featured" data-reveal>
-            <span class="plan__badge">Most chosen</span>
-            <div class="plan__top">
-              <h3 class="plan__name">Premium</h3>
-              <p class="plan__tagline">For the consistent.</p>
-            </div>
-            <p class="plan__price">
-              <span class="plan__currency">£</span><span class="plan__amount" data-price="165">165</span>
-              <span class="plan__period">/ month</span>
-            </p>
-            <ul class="plan__list" role="list">
-              <li>Full gym access</li>
-              <li>Group training</li>
-              <li>Fitness assessment</li>
-            </ul>
-            <a class="btn btn--solid plan__cta" href="#cta">
-              <span>Join now</span>
-              <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-            </a>
-          </article>
+          <a class="plan" href="mailto:hello@formefitness.club?subject=FORME%20—%20Starter%20membership" data-plan>
+            <span class="plan__name">Starter</span>
+            <span class="plan__includes">Gym floor access · Lockers · 24/7 entry</span>
+            <span class="plan__price"><span class="plan__currency">£</span><span class="plan__amount" data-price="79">79</span></span>
+            <span class="plan__cta">Join now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
 
-          <article class="plan" data-reveal>
-            <div class="plan__top">
-              <h3 class="plan__name">Elite</h3>
-              <p class="plan__tagline">For the devoted.</p>
-            </div>
-            <p class="plan__price">
-              <span class="plan__currency">£</span><span class="plan__amount" data-price="290">290</span>
-              <span class="plan__period">/ month</span>
-            </p>
-            <ul class="plan__list" role="list">
-              <li>All Premium features</li>
-              <li>Personal training sessions</li>
-              <li>Priority booking</li>
-              <li>Recovery facilities</li>
-            </ul>
-            <a class="btn btn--outline plan__cta" href="#cta">
-              <span>Join now</span>
-              <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-            </a>
-          </article>
+          <a class="plan plan--featured" href="mailto:hello@formefitness.club?subject=FORME%20—%20Performance%20membership" data-plan>
+            <span class="plan__name">Performance<span class="plan__tag mono">Most joined</span></span>
+            <span class="plan__includes">All classes · Group strength &amp; conditioning · Assessments</span>
+            <span class="plan__price"><span class="plan__currency">£</span><span class="plan__amount" data-price="139">139</span></span>
+            <span class="plan__cta">Join now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+
+          <a class="plan" href="mailto:hello@formefitness.club?subject=FORME%20—%20Elite%20membership" data-plan>
+            <span class="plan__name">Elite</span>
+            <span class="plan__includes">Everything in Performance · 2 PT sessions · Recovery suite · Priority booking</span>
+            <span class="plan__price"><span class="plan__currency">£</span><span class="plan__amount" data-price="249">249</span></span>
+            <span class="plan__cta">Join now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
         </div>
 
-        <p class="membership__fine" data-reveal>Joining fee £150 · 3-month minimum · Prices are placeholders for demonstration.</p>
+        <p class="plans__note mono" data-reveal>Joining fee £49 · Membership capped at 300 · Prices are placeholders for demonstration.</p>
       </div>
     </section>
 
-    <!-- ================= FINAL CTA ================= -->
-    <section class="cta" id="cta" aria-labelledby="ctaTitle">
-      <div class="container cta__inner">
-        <p class="eyebrow cta__eyebrow" data-reveal><span class="eyebrow__rule" aria-hidden="true"></span>Begin</p>
-        <h2 class="cta__title" id="ctaTitle">
-          <span class="cta__line"><span data-reveal-line>Ready to become</span></span>
-          <span class="cta__line"><span data-reveal-line class="cta__em">stronger?</span></span>
+    <!-- ==================================================================
+         FINAL CTA
+         ================================================================== -->
+    <section class="final" id="join" aria-labelledby="finalTitle">
+      <div class="shell final__inner">
+        <p class="label" data-reveal><span class="label__num">05</span>Start</p>
+
+        <h2 class="final__title" id="finalTitle">
+          <span class="final__line"><span data-reveal-line>Your next rep</span></span>
+          <span class="final__line"><span data-reveal-line>starts here.</span></span>
         </h2>
-        <p class="cta__text" data-reveal>Your next chapter starts with one decision.</p>
-        <a class="btn btn--solid cta__btn" href="mailto:hello@formefitness.club?subject=Membership%20enquiry%20%E2%80%94%20FORME" data-reveal>
-          <span>Start your journey</span>
-          <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-        </a>
-        <p class="cta__note" data-reveal>Opens your email app — or visit us in Mayfair.</p>
+
+        <div class="final__foot">
+          <div class="final__col">
+            <p class="final__text" data-reveal>Book a floor tour, meet a coach, and take a free movement assessment. No pressure, no contract — just a look at the room.</p>
+            <p class="final__detail mono" data-reveal>Mon—Fri 05:30—23:00<br>Sat—Sun 07:00—21:00</p>
+          </div>
+
+          <a class="btn btn--solid btn--xl final__btn" href="mailto:hello@formefitness.club?subject=Join%20FORME" data-reveal>
+            <span>Join FORME</span>
+            <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ==================================================================
+       FOOTER
+       ================================================================== -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a class="footer__logo" href="#home" aria-label="FORME — back to top">FORME</a>
-          <p class="footer__tagline">Strength is a lifestyle.<br>Mayfair, London.</p>
+    <div class="shell">
+      <div class="footer__cols">
+        <div class="footer__col footer__col--brand">
+          <p class="footer__logo">FORME</p>
+          <p class="footer__line mono">Performance fitness club<br>London, E2</p>
         </div>
 
-        <nav class="footer__nav" aria-label="Footer">
-          <h2 class="footer__heading">Navigate</h2>
+        <nav class="footer__col" aria-label="Footer">
+          <h2 class="footer__head mono">Index</h2>
           <ul role="list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#programs">Programs</a></li>
+            <li><a href="#programs">Training</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
             <li><a href="#membership">Membership</a></li>
+            <li><a href="#join">Join</a></li>
           </ul>
         </nav>
 
-        <div class="footer__contact">
-          <h2 class="footer__heading">Contact</h2>
-          <address>
-            12 Bruton Place<br>
-            Mayfair, London W1J 6NE<br>
+        <div class="footer__col">
+          <h2 class="footer__head mono">Studio</h2>
+          <address class="footer__line">
+            Unit 4, Abercrombie Yard<br>
+            London E2 8HD<br>
             <a href="tel:+442000000000">+44 (0)20 0000 0000</a><br>
             <a href="mailto:hello@formefitness.club">hello@formefitness.club</a>
           </address>
-          <p class="footer__note">Contact details are placeholders.</p>
+          <p class="footer__note mono">Placeholder details</p>
         </div>
 
-        <div class="footer__follow">
-          <h2 class="footer__heading">Follow</h2>
+        <div class="footer__col">
+          <h2 class="footer__head mono">Follow</h2>
           <a class="footer__social" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="FORME on Instagram (opens in a new tab)">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
             <span>Instagram</span>
           </a>
-          <p class="footer__hours"><span>Mon — Fri</span><span>05:30 — 22:30</span></p>
+          <p class="footer__line mono">Open 24/7<br>for members</p>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <p>© <span id="year">2026</span> FORME Fitness Club. All rights reserved.</p>
-        <p class="footer__legal"><a href="#membership">Membership terms</a><span aria-hidden="true">·</span><a href="#about">Privacy</a><span aria-hidden="true">·</span><span>Designed in London</span></p>
+        <p class="mono">© <span id="year">2026</span> FORME. All rights reserved.</p>
+        <p class="mono footer__legal"><a href="#membership">Terms</a><span>/</span><a href="#philosophy">Privacy</a><span>/</span>Designed in London</p>
       </div>
+
+      <p class="footer__wordmark" aria-hidden="true">FORME</p>
     </div>
   </footer>
 
